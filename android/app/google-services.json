@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "678773207399",
+    "project_id": "quickensole",
+    "storage_bucket": "quickensole.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678773207399:android:43dd88851ad1fd48d9bfc2",
+        "android_client_info": {
+          "package_name": "com.example.quicknsole_assesment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4B2VuXra1IEWJEVYr29cwmCM6RobEcL8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
