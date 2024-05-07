@@ -30,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
       resizeToAvoidBottomInset: false,
       body: Column(
         children: [
-          SizedBox(height: 11.h,),
+          SizedBox(height: 15.h,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -58,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       SizedBox(height: 3.h),
                       const Row(
                         children: [
-                          Text("Username", style: TextStyle(fontWeight: FontWeight.w600)),
+                          Text("Email", style: TextStyle(fontWeight: FontWeight.w600)),
                         ],
                       ),
                       Padding(
@@ -66,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: CustomTextField(
                           prefixIcon: Icon(Icons.person),
                           controller: loginController.emailController,
-                          hintText: "Type Your Username",
+                          hintText: "Type Your Email",
                           hintTextColor: Colors.black.withOpacity(0.9),
                           validator: (value) {
                             if (value!.isEmpty) {
@@ -134,6 +134,8 @@ class _LoginScreenState extends State<LoginScreen> {
               onPressed: () {
                 if (loginKey.currentState!.validate()) {
                   loginController.SignIn(context);
+                  // loginController.passwordController.clear();
+                  // loginController.emailController.clear();
                 }
               },
               label: 'Log In',

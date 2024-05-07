@@ -58,7 +58,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           )
                         ],
                       ),
-                      SizedBox(height: 5.h),
+                      SizedBox(height: 3.h),
                       const Row(
                         children: [
                           Text("Name", style: TextStyle(fontWeight: FontWeight.w600)),
@@ -170,6 +170,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
               if (loginKey.currentState!.validate()) {
                 signUpController.signUp();
                 Get.to(LoginScreen());
+                signUpController.addController.clear();
+                signUpController.nameController.clear();
+                signUpController.emailController.clear();
+                signUpController.passwordController.clear();
+
               }
             }, label: 'Sign UP',
             ),
@@ -189,7 +194,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 },
                 child: Text(
                   "Sign in",
-                  style: TextStyleHelper.h5.copyWith(fontSize: 12.sp, fontWeight: FontWeight.w600, color: MyColors.greenColor),
+                  style: TextStyleHelper.h5.copyWith(fontSize: 12.sp, fontWeight: FontWeight.w600, color: MyColors.redColor),
                 ),
               )
             ],

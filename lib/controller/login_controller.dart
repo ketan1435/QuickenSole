@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
 import '../screens/home_screen.dart';
+import '../widgets/custom_snackbar.dart';
 class LoginController extends GetxController
 {
   TextEditingController emailController = TextEditingController();
@@ -19,9 +20,15 @@ class LoginController extends GetxController
           context,
           MaterialPageRoute(builder: (context) => HomeScreen()),
         );
+        successSnackBar(message: "Login Successfully",title: "Success");
+        // passwordController.clear();
+        // emailController.clear();
       }
     } on FirebaseAuthException catch (e) {
       print("Error: $e");
+      errorSnackBar(message: "Please Enter Valid Credential",title: "Error");
+      // passwordController.clear();
+      // emailController.clear();
     }
   }
 }

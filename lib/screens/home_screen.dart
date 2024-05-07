@@ -23,11 +23,14 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red,
+        automaticallyImplyLeading: false,
+        toolbarHeight: 80,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text('Home Screen',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w700),),
+            Text('Home Screen',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w700),),
           ],
         ),
       ),
