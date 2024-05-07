@@ -170,11 +170,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
               if (loginKey.currentState!.validate()) {
                 signUpController.signUp();
                 Get.to(LoginScreen());
-                signUpController.addController.clear();
-                signUpController.nameController.clear();
-                signUpController.emailController.clear();
-                signUpController.passwordController.clear();
-
               }
             }, label: 'Sign UP',
             ),
@@ -199,15 +194,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
               )
             ],
           ),
-
-          // Expanded(
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.center,
-          //     children: [
-          //       Image.asset("assets/images/AppLogo.png", height: 35.95.h, width: 100.w, fit: BoxFit.fill),
-          //     ],
-          //   ),
-          // ),
         ],
       ),
     );

@@ -16,7 +16,7 @@ class LoginController extends GetxController
           email: emailController.text, password: passwordController.text);
       if (userCredential.user != null) {
         print("SignIn");
-        Navigator.pushReplacement(
+        Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => HomeScreen()),
         );

@@ -7,8 +7,7 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 
 import '../screens/home_screen.dart';
 
-class SignUpController extends GetxController
-{
+class SignUpController extends GetxController {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController nameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -18,7 +17,8 @@ class SignUpController extends GetxController
 
   Future<void> signUp() async {
     try {
-      UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
+      UserCredential userCredential =
+      await _auth.createUserWithEmailAndPassword(
         email: emailController.text,
         password: passwordController.text,
       );
@@ -29,15 +29,20 @@ class SignUpController extends GetxController
         'name': nameController.text.toString(),
         'add': addController.text.toString(),
       });
-      // Get.offAll(() => HomeScreen());
+
+      clearControllers();
     } catch (e) {
+      // Handle errors
       print('Error during sign up: $e');
+      // Example: Show a snackbar with the error message
+      Get.snackbar("Sign Up Error", "An error occurred during sign up: $e");
     }
   }
 
-  // void clearControllers() {
-  //   emailController.clear();
-  //   nameController.clear();
-  //   passwordController.clear();
-  // }
+  void clearControllers() {
+    emailController.clear();
+    nameController.clear();
+    passwordController.clear();
+    addController.clear();
+  }
 }
